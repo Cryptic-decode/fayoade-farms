@@ -4,8 +4,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Hero = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <div className="relative min-h-screen">
+    <div id="hero" className="relative min-h-screen">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -51,14 +67,16 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/products"
+              href="#products"
               className="bg-[#9FD134] text-white px-8 py-3 rounded-full font-medium hover:bg-[#78A832] transition-colors text-lg"
+              onClick={(e) => handleClick(e, 'products')}
             >
               Explore Products
             </Link>
             <Link 
-              href="/contact"
+              href="#contact"
               className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-colors text-lg"
+              onClick={(e) => handleClick(e, 'contact')}
             >
               Contact Us
             </Link>
@@ -67,7 +85,22 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce cursor-pointer"
+        onClick={() => {
+          const aboutSection = document.getElementById('about');
+          if (aboutSection) {
+            const offset = 80;
+            const elementPosition = aboutSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }}
+      >
         <svg 
           className="w-6 h-6 text-white"
           fill="none" 

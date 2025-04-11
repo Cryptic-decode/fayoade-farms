@@ -4,8 +4,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const About = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -50,7 +66,7 @@ const About = () => {
             </h2>
             
             <p className="text-gray-600 leading-relaxed">
-              At Fayoade Farms, we're more than just farmers – we're stewards of the land committed to sustainable agriculture. 
+              At Fayoade Farms, we&apos;re more than just farmers – we&apos;re stewards of the land committed to sustainable agriculture. 
               Our journey began with a vision to provide fresh, organic produce while preserving the environment for future generations.
             </p>
 
@@ -100,8 +116,9 @@ const About = () => {
             {/* CTA */}
             <div className="pt-6">
               <Link 
-                href="/about"
+                href="#contact"
                 className="inline-flex items-center text-[#2A7E2E] hover:text-[#78A832] font-medium transition-colors"
+                onClick={(e) => handleClick(e, 'contact')}
               >
                 Learn More About Us
                 <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -55,8 +55,26 @@ const products = [
 ];
 
 const Products = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // This keeps the user on the products section
+    // In a real scenario, you might want to load more products or expand the section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const offset = 80; // Account for fixed navbar height
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="products" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -122,10 +140,11 @@ const Products = () => {
         {/* CTA Section */}
         <div className="text-center mt-12">
           <Link
-            href="/products"
+            href="#contact"
             className="inline-flex items-center bg-[#2A7E2E] text-white px-6 py-3 rounded-full hover:bg-[#78A832] transition-colors"
+            onClick={handleClick}
           >
-            View All Products
+            Contact Us For More Products
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

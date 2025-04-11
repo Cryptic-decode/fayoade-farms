@@ -55,8 +55,24 @@ const services = [
 ];
 
 const Services = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -112,8 +128,9 @@ const Services = () => {
 
                   {/* Learn More Link */}
                   <Link 
-                    href={`/services#${service.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    href="#contact"
                     className="inline-flex items-center text-[#2A7E2E] hover:text-[#78A832] mt-4 text-sm font-medium transition-colors"
+                    onClick={(e) => handleClick(e, 'contact')}
                   >
                     Learn More
                     <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,8 +146,9 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center mt-12">
           <Link
-            href="/contact"
+            href="#contact"
             className="inline-flex items-center bg-[#2A7E2E] text-white px-8 py-4 rounded-full hover:bg-[#78A832] transition-colors text-lg font-medium"
+            onClick={(e) => handleClick(e, 'contact')}
           >
             Schedule a Consultation
             <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

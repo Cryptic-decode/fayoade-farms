@@ -17,7 +17,7 @@ const testimonials = [
     name: 'Sarah Okonjo',
     role: 'Local Market Vendor',
     image: '/images/testimonials/testimonial-2.jpg',
-    quote: 'I\'ve been sourcing my cassava and maize from Fayoade Farms for over two years now. Their produce is always fresh, and their prices are competitive. The consistency in quality keeps my customers coming back.',
+    quote: 'I&apos;ve been sourcing my cassava and maize from Fayoade Farms for over two years now. Their produce is always fresh, and their prices are competitive. The consistency in quality keeps my customers coming back.',
     rating: 5,
   },
   {
@@ -43,7 +43,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -54,7 +54,7 @@ const Testimonials = () => {
             What Our Customers Say
           </h2>
           <p className="text-gray-600">
-            Don't just take our word for it - hear from some of our satisfied customers about their experience with Fayoade Farms.
+            Don&apos;t just take our word for it - hear from some of our satisfied customers about their experience with Fayoade Farms.
           </p>
         </div>
 

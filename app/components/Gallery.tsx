@@ -3,7 +3,15 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-const galleryImages = [
+interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  category: string;
+  title: string;
+}
+
+const galleryImages: GalleryImage[] = [
   {
     id: 1,
     src: '/images/gallery/poultry-farm.jpg',
@@ -52,14 +60,14 @@ const categories = ['All', 'Facilities', 'Crops', 'Poultry', 'Team', 'Processing
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
   const filteredImages = activeCategory === 'All'
     ? galleryImages
     : galleryImages.filter(img => img.category === activeCategory);
 
   return (
-    <section className="py-20 bg-white">
+    <section id="gallery" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -137,16 +145,16 @@ const Gallery = () => {
               </button>
               <div className="relative h-[70vh]">
                 <Image
-                  src={(selectedImage as any).src}
-                  alt={(selectedImage as any).alt}
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="text-white text-center mt-4">
-                <h3 className="text-xl font-semibold mb-2">{(selectedImage as any).title}</h3>
+                <h3 className="text-xl font-semibold mb-2">{selectedImage.title}</h3>
                 <span className="bg-[#9FD134] px-4 py-1 rounded-full text-sm">
-                  {(selectedImage as any).category}
+                  {selectedImage.category}
                 </span>
               </div>
             </div>

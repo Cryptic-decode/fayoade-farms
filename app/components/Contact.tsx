@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +39,7 @@ const Contact = () => {
         subject: '',
         message: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -48,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -59,7 +58,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="text-gray-600">
-            Have questions about our products or services? We're here to help and would love to hear from you.
+            Have questions about our products or services? We&apos;re here to help and would love to hear from you.
           </p>
         </div>
 
@@ -162,7 +161,7 @@ const Contact = () => {
               </button>
 
               {submitStatus === 'success' && (
-                <p className="text-green-600 text-center">Thank you for your message! We'll get back to you soon.</p>
+                <p className="text-green-600 text-center">Thank you for your message! We&apos;ll get back to you soon.</p>
               )}
               {submitStatus === 'error' && (
                 <p className="text-red-600 text-center">There was an error sending your message. Please try again.</p>

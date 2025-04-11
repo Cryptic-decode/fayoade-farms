@@ -17,14 +17,14 @@ const Newsletter = () => {
       setStatus('success');
       setMessage('Thank you for subscribing! Check your email for confirmation.');
       setEmail('');
-    } catch (error) {
+    } catch {
       setStatus('error');
       setMessage('Something went wrong. Please try again.');
     }
   };
 
   return (
-    <section className="py-20 bg-[#2A7E2E]">
+    <section id="newsletter" className="py-20 bg-[#2A7E2E]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Newsletter Content */}
@@ -73,7 +73,7 @@ const Newsletter = () => {
             {/* Privacy Notice */}
             <p className="text-white/70 text-sm mt-4">
               By subscribing, you agree to receive marketing communications from us. 
-              Don't worry, we respect your privacy and you can unsubscribe at any time.
+              Don&apos;t worry, we respect your privacy and you can unsubscribe at any time.
             </p>
           </div>
         </div>
