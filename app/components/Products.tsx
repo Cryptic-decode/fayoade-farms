@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: 'Poultry Products',
     description: 'Fresh, farm-raised chickens and premium quality eggs from our sustainable poultry farm.',
-    image: '/images/poultry.jpg',
+    image: '/images/products/poultry.jpg',
     items: ['Fresh Chicken', 'Farm Eggs', 'Day-Old Chicks'],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -20,7 +20,7 @@ const products = [
     id: 2,
     name: 'Maize',
     description: 'High-quality maize grown using sustainable farming practices, perfect for both human consumption and animal feed.',
-    image: '/images/maize.jpg',
+    image: '/images/products/maize.jpg',
     items: ['Fresh Maize', 'Dried Maize', 'Maize Flour'],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -32,7 +32,7 @@ const products = [
     id: 3,
     name: 'Cassava',
     description: 'Fresh cassava and processed products grown with care and harvested at peak quality.',
-    image: '/images/cassava.jpg',
+    image: '/images/products/cassava.jpg',
     items: ['Fresh Cassava', 'Cassava Flour', 'Processed Cassava'],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +44,7 @@ const products = [
     id: 4,
     name: 'Palm Kernel',
     description: 'Sustainably harvested palm kernel products processed with modern techniques.',
-    image: '/images/palm-kernel.jpg',
+    image: '/images/products/palm-kernel.jpg',
     items: ['Palm Kernel Oil', 'Palm Kernel Cake', 'Raw Palm Kernel'],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
