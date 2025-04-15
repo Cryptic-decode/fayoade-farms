@@ -90,6 +90,7 @@ const Navbar = () => {
               Contact Us
             </Link>
           </div>
+          
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
