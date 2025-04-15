@@ -49,7 +49,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 6,
-    src: '/images/gallery/palm-kernel.jpg',
+    src: '/images/gallery/palm-kernel-processing.jpg',
     alt: 'Palm Kernel Processing',
     category: 'Processing',
     title: 'Palm Kernel Processing'
