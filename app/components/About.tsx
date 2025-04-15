@@ -29,7 +29,7 @@ const About = () => {
           <div className="relative grid grid-cols-2 gap-4">
             <div className="relative h-[300px] col-span-2">
               <Image
-                src="/images/about-1.jpg"
+                src="/images/about/about-1.jpg"
                 alt="Fayoade Farms Overview"
                 fill
                 className="object-cover rounded-lg"
@@ -37,7 +37,7 @@ const About = () => {
             </div>
             <div className="relative h-[200px]">
               <Image
-                src="/images/about-3.jpg"
+                src="/images/about/about-3.jpg"
                 alt="Sustainable Farming"
                 fill
                 className="object-cover rounded-lg"
@@ -45,7 +45,7 @@ const About = () => {
             </div>
             <div className="relative h-[200px]">
               <Image
-                src="/images/about-2.jpg"
+                src="/images/about/about-2.jpg"
                 alt="Chicks feeding"
                 fill
                 className="object-cover rounded-lg"

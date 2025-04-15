@@ -47,7 +47,7 @@ const Hero = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 mt-8">
             <div className="text-center p-4">
-              <h3 className="text-3xl font-bold text-[#9FD134]">5+</h3>
+              <h3 className="text-3xl font-bold text-[#9FD134]">3+</h3>
               <p className="text-sm mt-2">Years Experience</p>
             </div>
             <div className="text-center p-4">

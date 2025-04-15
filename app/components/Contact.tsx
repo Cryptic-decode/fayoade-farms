@@ -202,7 +202,7 @@ const Contact = () => {
                   <div className="ml-3">
                     <h4 className="text-sm font-medium text-gray-900">Address</h4>
                     <p className="mt-1 text-sm text-gray-600">
-                      [Your Farm Address Here]
+                      Elewure Ede Off Gbogan, Osogbo Express, Osun State.
                     </p>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ const Contact = () => {
                   <div className="ml-3">
                     <h4 className="text-sm font-medium text-gray-900">Phone</h4>
                     <p className="mt-1 text-sm text-gray-600">
-                      [Your Phone Number]
+                      08143575022
                     </p>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ const Contact = () => {
                   <div className="ml-3">
                     <h4 className="text-sm font-medium text-gray-900">Email</h4>
                     <p className="mt-1 text-sm text-gray-600">
-                      [Your Email Address]
+                      info@fayoadefarms.com
                     </p>
                   </div>
                 </div>
